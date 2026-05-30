@@ -5,6 +5,7 @@ directories:
 files:
   - dist/**
   - package.json
+afterPack: scripts/after-pack.js
 linux:
   target:
     - deb
@@ -22,3 +23,6 @@ deb:
     - libatspi2.0-0
     - libdrm2
     - libgbm1
+  fpm:
+    - "--conflicts=open-webui"
+    - "--replaces=open-webui"
